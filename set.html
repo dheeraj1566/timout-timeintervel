@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <input type="range" min="1" max="10">
+        <input type="text" placeholder="enter name">
+        <button>Set Alarm</button>
+        <p></p>
+    </div>
+    <script>
+
+        let inputrange = document.querySelector("input:first-of-type")
+        const inputtext = document.querySelector("input:last-of-type")
+        const btn = document.querySelector("button")
+        const para = document.querySelector("p")
+
+
+        btn.addEventListener("click", () => {
+            let currentval = Number(inputrange.value)*1000;
+            console.log(typeof(currentval))
+          
+            setTimeout(() => {
+                para.innerHTML = inputtext.value;
+            },currentval)
+
+        })
+
+    </script>
+</body>
+
+</html>
